@@ -1,0 +1,108 @@
+@use "../abstracts/" as *;
+
+.nav__icon {
+  @include media($md) {
+    display: none;
+  }
+}
+
+.mastercraft__btns {
+  @include flex(space-between, center, null, 0.5rem);
+  width: 100%;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+.project__btn {
+  background-color: $moderate-cyan;
+  color: $white;
+  font-weight: 600;
+  padding: 1.282rem 2.38rem;
+  border-radius: 35px;
+  @include trans;
+  &:hover {
+    background: $d-moderate-cyan;
+  }
+}
+.bookmark {
+  &__btn {
+    @include flex(null, center, null, 1.25rem);
+    border-radius: 27px;
+    background-color: rgb($d-gray, 0.1);
+    @include trans;
+  }
+  &__text {
+    display: none;
+    font-weight: $weight-300;
+    color: $d-gray;
+    padding-right: 1.5rem;
+    @include media($sm) {
+      display: block;
+    }
+  }
+  &__icon {
+    circle,
+    path {
+      @include trans;
+    }
+  }
+  &__btn:hover {
+    .bookmark__icon {
+      circle {
+        fill: lighten(#2f2f2f, 20%);
+      }
+    }
+  }
+  &__btn.marked {
+    background-color: rgb($moderate-cyan, 0.1);
+    .bookmark {
+      &__text {
+        color: $d-moderate-cyan;
+      }
+      &__icon {
+        circle {
+          fill: $d-moderate-cyan;
+        }
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
+.about,
+.modal {
+  &__membership {
+    &--btn {
+      color: $white;
+      background: $moderate-cyan;
+      font: {
+        weight: $weight-300;
+        size: 0.8rem;
+      }
+      padding: 1rem 1.75rem;
+      border-radius: 25px;
+      @include trans;
+      &:hover {
+        background-color: $d-moderate-cyan;
+      }
+    }
+  }
+}
+.about__membership {
+  margin-top: 0.75rem;
+  @include media($sm) {
+    margin-top: 0;
+  }
+}
+.out-of-stock {
+  .about,
+  .modal {
+    &__membership--btn {
+      background-color: lighten($d-gray, 30%);
+      cursor: not-allowed;
+    }
+  }
+}
+.thanks__msg--btn {
+  @extend .about__membership--btn;
+  padding-inline: 2rem;
+}

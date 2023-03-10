@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button,
+input {
+  all: unset;
+  cursor: pointer;
+  text-align: inherit;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  color: $d-gray;
+  line-height: 1.8;
+}
+hr {
+  border: none;
+  background-color: rgba($d-gray, 0.4);
+}
+body {
+  font-family: $font;
+  background-color: #fafafa;
+}

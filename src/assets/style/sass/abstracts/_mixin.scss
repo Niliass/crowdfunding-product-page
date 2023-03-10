@@ -1,0 +1,15 @@
+@mixin flex($just, $align, $dir, $gap) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-direction: $dir;
+  gap: $gap;
+}
+@mixin media($wd) {
+  @media (min-width: $wd) {
+    @content;
+  }
+}
+@mixin trans {
+  transition: 0.25s;
+}
